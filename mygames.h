@@ -2,19 +2,14 @@
 #include<time.h>
 #include<graphics.h>
 
+	randomize();
+	int a;
+	a=215+rand()%150;
 myrandom()
 {
-	int gd=DETECT,gm,a,i;
-	clrscr();
-
-	randomize();
-
-	a=215+rand()%150;
-
-
-		//printf("%d\t",a);
+	int gd=DETECT,gm,i;
 		initgraph(&gd,&gm,"c:\\turboc3\\bgi");
-		for(i=0;i<380;i++)
+		for(i=0;i<30;i++)
 		{
 		rectangle(a,10+i,a+50,50+i);
 		delay(10);
