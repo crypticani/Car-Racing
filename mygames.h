@@ -2,12 +2,11 @@
 #include<time.h>
 #include<graphics.h>
 
-	randomize();
-	int a;
-	a=215+rand()%150;
 myrandom()
 {
-	int gd=DETECT,gm,i;
+	int gd=DETECT,gm,i,a;
+	randomize();
+	a=215+rand()%150;
 		initgraph(&gd,&gm,"c:\\turboc3\\bgi");
 		for(i=0;i<30;i++)
 		{
