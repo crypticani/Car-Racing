@@ -4,20 +4,19 @@
 #include<conio.h>
 #include<time.h>
 #include<stdlib.h>
-#define LEFT 75
-#define RIGHT 77
-#define UP 72
-#define DOWN 80
-#define ENTER 13
-//#include"mygames.h"
+#include<dos.h>
 
+void loading();
 void car(int, int);
 void track();
 void play();
 void menu();
+void h1();
+void h2();
 main()
 {
-  menu();
+	 loading();
+	 menu();
 }
 
 
@@ -117,61 +116,117 @@ void track()
 		line(320,0,320,getmaxy());
 		line(370,0,370,getmaxy());
 }
-
-
+void loading() //loading screen
+{
+	int gd=DETECT,gm,i;
+	initgraph(&gd,&gm,"c:\\turboc3\\bgi");
+	settextstyle(8,0,7);
+	outtextxy(130,100,"Car Racing");
+       //	settextstyle(0,0,5);
+       //	outtextxy((getmaxx()/2)-500,getmaxy()-125,"LOADING");
+	for(i=0;i<200;i++)
+	{
+		setcolor(RED);
+		rectangle((getmaxx()/2)-100+i,getmaxy()-100,(getmaxx()/2)+100,getmaxy()-80);
+		delay(10);
+	}
+}
 void menu()
 {
-int s=1,t=0,a,p=140,gd=DETECT,gm;
-initgraph(&gd,&gm,"c:\\turboc3\\bgi");
-do
-{
-do
-{
-cleardevice();
-setcolor(YELLOW);
-settextstyle(1,0,4);
-outtextxy(230,30,"MENU");
-setfillstyle(1,2);
-bar(140,80,400,82);
-settextstyle(1,0,1);
-setcolor(10);
-outtextxy(220,137,"PLAY GAME");
-outtextxy(220,167,"SCORES");
-outtextxy(220,197,"HELP");
-outtextxy(220,227,"ABOUT");
-outtextxy(220,257,"EXIT");
-setcolor(RED);
-rectangle(200,p,350,p+20);
-a=getch();
-switch(a)
-{
-case UP:if(p>140)
-	{p-=30;
-	 s--;}
-	break;
-case DOWN:if(p<260)
-	{p+=30;
-	s++;};
-	break;
-case ENTER:a=1;
-	break;
-default:break;
+
+	int gd=DETECT,gm,i,k,x1=215,y1=198,x2=425,y2=245,a;
+	initgraph(&gd,&gm,"c:\\turboc3\\bgi");
+	while(1)
+	{
+	h1();
+	h2();
+	rectangle(x1,y1,x2,y2);
+	if(kbhit()) // detects the pressing of key
+	{
+	   k=getch();
+	   {
+		if(k==72&&y1==198) //cursor at the top
+		{
+
+			cleardevice();
+			h1();
+			h2();
+			rectangle(x1,y1,x2,y2);
+		}
+		else if(k==80&&y2==405) //cursor at the bottom and moves to the top
+		{
+			x1=215;
+			y1=198;
+			x2=425;
+			y2=245;
+			cleardevice();
+			h1();
+			h2();
+			rectangle(x1,y1,x2,y2);
+		}
+		else if(k==80) //cursor moves downward
+		{
+			cleardevice();
+			h1();
+			h2();
+			y1=y1+40;
+			y2=y2+40;
+			rectangle(x1,y1,x2,y2);
+		}
+		else if(k==72) //cursor moves upward
+		{
+			cleardevice();
+			h1();
+			h2();
+			y1=y1-40;
+			y2=y2-40;
+			rectangle(x1,y1,x2,y2);
+		}
+
+		else if(k==13) //Enter key is pressed
+		{
+			if(y1==198)  // cursor on the first option
+			{
+			   cleardevice();
+			   play(); // opens the game
+			}
+			else
+			{
+				exit(0);
+			}
+		}
+
+		else if(k==27)
+		{
+			exit(0);
+		}
+
+	   }
+	}
+	}
+
+	getch();
+	closegraph();
+
+
 }
-}while(a!=1);
-switch(s)
+
+void h1() //prints the "MENU"
 {
-case 1:play();
-	break;
-/*case 2:disp_score();
-	break;
-case 3:help();
-	break;
-case 4:about();
-	break;*/
-case 5:exit(0);
-default:cprintf("Invalid choice");
-	break;
+	settextstyle(7,0,7);
+	setcolor(GREEN);
+	outtextxy(215,50,"MENU");
+	setcolor(RED);
+	bar3d(20,145,620,150,5,2);
 }
-}while(t==0);
-getch();
+
+void h2()  // prints options
+{
+	settextstyle(8,0,4);
+	setcolor(GREEN);
+	outtextxy(220,200,"PLAY GAME");
+	outtextxy(220,240,"HIGH SCORE");
+	outtextxy(220,280,"HELP");
+	outtextxy(220,320,"ABOUT");
+	outtextxy(220,360,"EXIT");
 }
