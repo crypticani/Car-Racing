@@ -102,18 +102,24 @@ void car(int i, int j)
 
 void mycar(int i, int j)
 {
-	int poly1[]={245,300,285,300,294,320,236,320,245,300};//back mirror
-	int poly2[]={236,230,294,230,280,250,250,250,236,230};//wind screen
+	//int poly1[]={245,300,285,300,294,320,236,320,245,300};//back mirror
+	//int poly2[]={236,230,294,230,280,250,250,250,236,230};//wind screen
+	
 	rectangle(15+i,250-j,45+i,290-j); //roof
 	rectangle(10+i,290-j,50+i,300-j);
 	rectangle(i,230-j,60+i,320-j);      //main outline of car
 	arc(30+i,250-j,10,170,35);     //side mirror's
 	arc(30+i,190-j,10,170,15);     //front light
 
-	setfillstyle(LTSLASH_FILL,RED);
+	/*setfillstyle(LTSLASH_FILL,RED);
 	fillpoly(5,poly1); //back mirror
 	setfillstyle(LTSLASH_FILL,RED);
-	fillpoly(5,poly2); //wind screen
+	fillpoly(5,poly2); //wind screen*/
+	
+	line(i,230-j,15+i,250-j); //top_left_corner
+	line(45+i,250-j,60+i,230-j);//top_right_corner
+	line(10+i,300-j,i,320-j);//bottom_left_corner
+	line(50+i,300-j,60+i,320-j);//bottom_right_corner
 
 	ellipse(30+i,320-j,180,360,30,20);//trunk lid
 	ellipse(30+i,230-j,0,180,30,55);//bonet
