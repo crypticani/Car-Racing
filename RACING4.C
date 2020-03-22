@@ -31,8 +31,8 @@ int gd=DETECT,gm,i,j,k,r,ch;
 	{
 		for(i=220;i<405;i++)
 		{
-	     for(j=0;j<10;j++)
-	     {
+	     	for(j=0;j<10;j++)
+	    	{
 			car(i);
 			track();
 			score();
@@ -53,7 +53,7 @@ int gd=DETECT,gm,i,j,k,r,ch;
 				{
 					k++;
 				}
-			delay(10);
+			//delay(10);
 			if(kbhit())
 			{
 				ch=getch();
@@ -79,7 +79,7 @@ int gd=DETECT,gm,i,j,k,r,ch;
 				{
 					menu();
 				}
-			delay(10);
+			//delay(10);
 
 		}
 	     }
@@ -103,6 +103,7 @@ void car(int i)
 	arc(30+i,290,10,170,15);     //front light
 	ellipse(30+i,420,180,360,30,20);//trunk lid
 	ellipse(30+i,330,0,180,30,55);//bonnet
+	delay(10);
 	cleardevice();
 }
 
