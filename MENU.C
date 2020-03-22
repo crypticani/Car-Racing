@@ -107,4 +107,7 @@ void h()
 {
 	cleardevice();
        outtext("Hello");
+        if(kbhit()){
+        cleardevice();
+        }
 }
