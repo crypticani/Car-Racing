@@ -9,7 +9,7 @@
 	
 	UPCOMING (Racing6 tested):
 	1. No of tracks will be changed from 4 to 3
-	2. frequency of obstacles will increased to 200%
+	2. frequency of obstacles will increase to 200%
 	3. Pause and Resume feature.
 	4. bug at the select_car screen not fixed for future debugging purpose.
 	
