@@ -3,6 +3,7 @@
 	1. Length of the code is hugely reduced. (Approx 400 lines has been removed), without changing anything in the gameplay.
 	2. Car's horizontal position has been lowered.
 	3. Loading animation slightly changed.
+	4. All Warnings have been removed.
 */
 #include<graphics.h>
 #include<stdio.h>
@@ -35,10 +36,11 @@ void mycar4(int);
 
 int main()
 {
-	 int gd=DETECT,gm;
-	 initgraph(&gd,&gm,"c:\\turboc3\\bgi");
-	 loading();  //loading screen
-	 menu();     
+	int gd=DETECT,gm;
+	initgraph(&gd,&gm,"c:\\turboc3\\bgi");
+	loading();  //loading screen
+	menu(); 
+	return 0;
 }
 
 void play()
@@ -73,7 +75,7 @@ void play()
 		rectangle(r,k,r+50,50+k);
 		rectangle(s,l,s+50,50+l);
 				
-			if(i+55>=r&&i<=(r+50)&&k>=270&&k<=420)
+			if(i+58>=r&&i<=(r+50)&&k>=270&&k<=420)
 			{
 				cleardevice();
 				outtextxy(getmaxx()/2,getmaxy()/2,"GAME OVER");
@@ -88,7 +90,7 @@ void play()
 				  }
 				menu();
 			}
-			if(i+55>=s&&i<=(s+50)&&l>=270&&l<=420)
+			if(i+58>=s&&i<=(s+50)&&l>=270&&l<=420)
 			{
 				cleardevice();
 				outtextxy(getmaxx()/2,getmaxy()/2,"GAME OVER");
@@ -164,12 +166,6 @@ void play()
 	}
 	}
 	getch();
-}
-
-int score()
-{      //	int a=10;
-		gotoxy(500,200);
-		printf("%d",a);
 }
 
 void select_car()
@@ -288,7 +284,6 @@ void car_choice()
 
 void car1()
 {
-	int i=120;
 	setcolor(RED);
 	rectangle(250,250,280,290); //roof
 	rectangle(245,290,285,300);
