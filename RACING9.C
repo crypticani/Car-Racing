@@ -1,5 +1,5 @@
 /*
-	Racing 8 changelog :
+	Racing 9 changelog :
 	1. useless code in car function's is removed.(just like design on bonet)
 	2. Car is minimized.
 */
