@@ -1,9 +1,7 @@
 /*
 	Racing 8 changelog :
-	1. Length of the code is hugely reduced. (Approx 400 lines has been removed), without changing anything in the gameplay.
-	2. Car's horizontal position has been lowered.
-	3. Loading animation slightly changed.
-	4. All Warnings have been removed.
+	1. useless code in car function's is removed.(just like design on bonet)
+	2. Car is minimized.
 */
 #include<graphics.h>
 #include<stdio.h>
