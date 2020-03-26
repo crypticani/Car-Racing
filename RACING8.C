@@ -7,8 +7,8 @@
 #include<graphics.h>
 #include<stdio.h>
 #include<conio.h>
-#include<time.h>    // for randomize() and rand() functions.
-#include<stdlib.h>  // for randomize() and rand() functions.
+#include<time.h>    // for rand() function.
+#include<stdlib.h>  // for rand() function.
 #include<dos.h>      // for delay() and exit() function.
 #define D 50   // Delay
 
@@ -45,7 +45,7 @@ void play()
 {
 	int i,j,k,l,r,s,ch;
 	cleardevice();
-		randomize();
+	
 		r=210+rand()%150; // generates a random number between 210 and 210+150
 		s=210+rand()%150;
 	for(k=0;k<433;k+=5)
@@ -57,7 +57,6 @@ void play()
 		for(j=0;j<500;j++)
 		{
 			track();
-			//car(i);
 			switch(cars)
 			{
 				case 1 : mycar1(i);
@@ -109,14 +108,12 @@ void play()
 			{
 				k=0;
 				a=a+10;
-				randomize();
 				r=210+rand()%150;   // generates a random number between 210 and 210+150
 			}
 			else if(l==430)
 			{
 				l=0;
 				a=a+10;
-				randomize();
 				s=210+rand()%150;
 			}
 			else
