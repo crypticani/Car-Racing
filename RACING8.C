@@ -33,7 +33,7 @@ void mycar2(int);
 void mycar3(int);
 void mycar4(int);
 
-void main()
+int main()
 {
 	 int gd=DETECT,gm;
 	 initgraph(&gd,&gm,"c:\\turboc3\\bgi");
