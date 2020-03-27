@@ -78,7 +78,7 @@ void play()
 			bar3d(630,0,630,475,5,2);
 			
 			//prints score to the screen.
-			settextstyle(7,0,2);
+			settextstyle(11,0,5);
 			sprintf(scr,"Score : %d ",a);
 			outtextxy(480,150,scr);
 			if(D==55)
