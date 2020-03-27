@@ -4,6 +4,7 @@
 	2. Position and design of displayed texts adjusted.
 	3. High Score menu added to see best of 5 scores.
 	4. Playing screen got a boundary and track is slightly updated.
+	5. Speed of car will increase after achieving a certain score.
 */
 
 #include<graphics.h>
@@ -12,13 +13,13 @@
 #include<time.h>    // for rand() function.
 #include<stdlib.h>  // for rand() function.
 #include<dos.h>      // for delay() and exit() function.
-#define D 50   // Delay
 #define N 10   // Number of high scores
 
 int a=0; // for score
 char scr[50];  // for printing score using sprintf.
 int cars=0;  // for car selection
 int life=3;  //provides 3 chances to players.
+int D==55;  //delay
 int score[N];
 int count=0;  
 
@@ -167,12 +168,36 @@ void play()
 			{
 				k=0;
 				a=a+10;
+				if(a>=50&&a<150)
+				{
+					D=50;
+				}
+				else if (a>=150&&a<300)
+				{
+					D=45;
+				}
+				else if(a>=350)
+				{
+					D=40;
+				}
 				r=210+rand()%150;   // generates a random number between 210 and 210+150
 			}
 			else if(l==430)
 			{
 				l=0;
 				a=a+10;
+				if(a>=50&&a<150)
+				{
+					D=50;
+				}
+				else if (a>=150&&a<300)
+				{
+					D=45;
+				}
+				else if(a>=350)
+				{
+					D=40;
+				}
 				s=210+rand()%150;
 			}
 			else
