@@ -5,6 +5,7 @@
 	3. High Score menu added to see best of 5 scores.
 	4. Playing screen got a boundary and track is slightly updated.
 	5. Speed of car will increase after achieving a certain score.
+	6. Sound will be produced when navigation keys will be pressed.
 */
 
 #include<graphics.h>
@@ -249,6 +250,8 @@ void play()
 			if(kbhit())
 			{
 				ch=getch();
+				sound(400);
+				delay(10);
 				if(ch==32) //space button
 				{
 					outtextxy(200,200,"GAME PAUSED");
@@ -281,6 +284,7 @@ void play()
 				{
 					menu();
 				}
+				nosound();
 			}
 		}
 		}
