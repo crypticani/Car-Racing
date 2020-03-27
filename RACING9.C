@@ -2,6 +2,7 @@
 	Racing 9 changelog :
 	1. useless code in car function's is removed.(just like design on bonet)
 	2. Car is minimized.
+	3. Life System added (3 Chances will be given).
 */
 #include<graphics.h>
 #include<stdio.h>
@@ -13,6 +14,7 @@
 
 int a=0; // for score
 int cars=0;  // for car selection
+int life=3;   // Provides 3 chance to players
 void loading();
 void car(int);
 void track();
@@ -76,32 +78,69 @@ void play()
 			if(i+50>=r&&i<=(r+40)&&k>=265&&k<=415)
 			{
 				cleardevice();
-				outtextxy(getmaxx()/2,getmaxy()/2,"GAME OVER");
+				if(life!=1)
+				{
+				outtextxy(getmaxx()/2,getmaxy()/2,"One Chance Lost!");
 				gotoxy(240,200);
 				printf("Your Score is : %d : ",a);
-				a=0;     //resets score to 0.
-				outtextxy(200,360,"Press Enter to return to the main Menu.");
+				life=life-1;   //Reduces life.
+				printf("\nRemaining Life : %d ",life);
+				outtextxy(200,360,"Press Enter to Continue!");
 				kbhit();
 				  while(getch()!=13)  //to hold the screen till enter is pressed
 				  {
-				  getch();
+					getch();
 				  }
+				play();
+				}
+				else if(life==1)
+				{
+					outtextxy(getmaxx()/2,getmaxy()/2,"GAME OVER");
+					gotoxy(240,200);
+					printf("Your Score is : %d : ",a);
+					a=0;     //resets score to 0.
+					outtextxy(200,360,"Press Enter to return to the main Menu.");
+					kbhit();
+					while(getch()!=13)  //to hold the screen till enter is pressed
+					{
+						getch();
+					} 
 				menu();
+				}
 			}
 			if(i+50>=s&&i<=(s+40)&&l>=265&&l<=415)
 			{
 				cleardevice();
-				outtextxy(getmaxx()/2,getmaxy()/2,"GAME OVER");
+				if(life!=1)
+				{
+				outtextxy(getmaxx()/2,getmaxy()/2,"One Chance Lost!");
 				gotoxy(240,200);
 				printf("Your Score is : %d : ",a);
-				outtextxy(200,360,"Press Enter to return to the main Menu.");
-				a=0;
+				life=life-1;   //Reduces life.
+				printf("\nRemaining Life : %d ",life);
+				outtextxy(200,360,"Press Enter to Continue!");
 				kbhit();
-				  while(getch()!=13) //to hold the screen till enter is pressed
+				  while(getch()!=13)  //to hold the screen till enter is pressed
 				  {
-				  getch();
+					getch();
 				  }
+				play();
+				}
+				else if(life==1)
+				{
+					outtextxy(getmaxx()/2,getmaxy()/2,"GAME OVER");
+					gotoxy(240,200);
+					printf("Your Score is : %d : ",a);
+					a=0;     //resets score to 0.
+					life=3;  //resets life to 3.
+					outtextxy(200,360,"Press Enter to return to the main Menu.");
+					kbhit();
+					while(getch()!=13)  //to hold the screen till enter is pressed
+					{
+						getch();
+					} 
 				menu();
+				}
 			}
 
 			if(k==430)
