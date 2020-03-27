@@ -1,11 +1,6 @@
 /*
-	Racing 10 changelog :
-	1. Score is continuously displayed.
-	2. Position and design of displayed texts adjusted.
-	3. High Score menu added to see best of 5 scores.
-	4. Playing screen got a boundary and track is slightly updated.
-	5. Speed of car will increase after achieving a certain score.
-	6. Sound will be produced when navigation keys will be pressed.
+	Racing 11 changelog :
+	1. Sound will be produced when navigation keys will be pressed.
 */
 
 #include<graphics.h>
