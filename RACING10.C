@@ -80,7 +80,23 @@ void play()
 			//prints score to the screen.
 			settextstyle(7,0,2);
 			sprintf(scr,"Score : %d ",a);
-			outtextxy(500,150,scr);
+			outtextxy(480,150,scr);
+			if(D==55)
+			{
+				outtextxy(480,120,"Speed : 90 mph");
+			}
+			else if(D==50)
+			{
+				outtextxy(480,120,"Speed : 100 mph");
+			}
+			else if(D==45)
+			{
+				outtextxy(480,120,"Speed : 110 mph");
+			}
+			else if(D==40)
+			{
+				outtextxy(480,120,"Speed : 120 mph");
+			}
 			switch(cars)
 			{
 				case 1 : mycar1(i);
