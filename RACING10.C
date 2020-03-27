@@ -80,22 +80,30 @@ void play()
 			//prints score to the screen.
 			settextstyle(11,0,5);
 			sprintf(scr,"Score : %d ",a);
-			outtextxy(480,150,scr);
+			outtextxy(500,150,scr);
 			if(D==55)
 			{
-				outtextxy(480,120,"Speed : 90 mph");
+				outtextxy(500,120,"Speed : 100 mph");
 			}
 			else if(D==50)
 			{
-				outtextxy(480,120,"Speed : 100 mph");
+				outtextxy(500,120,"Speed : 110 mph");
 			}
 			else if(D==45)
 			{
-				outtextxy(480,120,"Speed : 110 mph");
+				outtextxy(500,120,"Speed : 120 mph");
 			}
 			else if(D==40)
 			{
-				outtextxy(480,120,"Speed : 120 mph");
+				outtextxy(500,120,"Speed : 130 mph");
+			}
+			else if(D==35)
+			{
+				outtextxy(500,120,"Speed : 140 mph");
+			}
+			else if(D==30)
+			{
+				outtextxy(500,120,"Speed : 150 mph");
 			}
 			switch(cars)
 			{
@@ -184,17 +192,25 @@ void play()
 			{
 				k=0;
 				a=a+10;
-				if(a>=50&&a<150)
+				if(a>=50&&a<100)
 				{
 					D=50;
 				}
-				else if (a>=150&&a<300)
+				else if (a>=100&&a<200)
 				{
 					D=45;
 				}
-				else if(a>=350)
+				else if(a>=200&&a<300)
 				{
 					D=40;
+				}
+				else if(a>=300&&a<400)
+				{
+					D=35;
+				}
+				else if(a>=400)
+				{
+					D=30;
 				}
 				r=210+rand()%150;   // generates a random number between 210 and 210+150
 			}
@@ -202,17 +218,25 @@ void play()
 			{
 				l=0;
 				a=a+10;
-				if(a>=50&&a<150)
+				if(a>=50&&a<100)
 				{
 					D=50;
 				}
-				else if (a>=150&&a<300)
+				else if (a>=100&&a<200)
 				{
 					D=45;
 				}
-				else if(a>=350)
+				else if(a>=200&&a<300)
 				{
 					D=40;
+				}
+				else if(a>=300&&a<400)
+				{
+					D=35;
+				}
+				else if(a>=400)
+				{
+					D=30;
 				}
 				s=210+rand()%150;
 			}
