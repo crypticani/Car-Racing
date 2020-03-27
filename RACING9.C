@@ -73,7 +73,7 @@ void play()
 		rectangle(r,k,r+50,50+k);
 		rectangle(s,l,s+50,50+l);
 
-			if(i+30>=r&&i<=(r+30)&&k>=325&&k<=445)
+			if(i+50>=r&&i<=(r+40)&&k>=265&&k<=415)
 			{
 				cleardevice();
 				outtextxy(getmaxx()/2,getmaxy()/2,"GAME OVER");
@@ -88,7 +88,7 @@ void play()
 				  }
 				menu();
 			}
-			if(i+30>=s&&i<=(s+30)&&l>=325&&l<=445)
+			if(i+50>=s&&i<=(s+40)&&l>=265&&l<=415)
 			{
 				cleardevice();
 				outtextxy(getmaxx()/2,getmaxy()/2,"GAME OVER");
@@ -142,7 +142,7 @@ void play()
 					{
 						i=225;
 					}
-					i-=20;
+					i-=10;
 				}
 
 				if(ch==77&&i<337) //move right
@@ -151,7 +151,7 @@ void play()
 					{
 						i=345; // to remain on the track
 					}
-					i+=20;
+					i+=10;
 				}
 
 				if(ch==27) //escape key is pressed
