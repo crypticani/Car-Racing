@@ -15,7 +15,7 @@ int a=0; // for score
 char scr[50];  // for printing score using sprintf.
 int cars=0;  // for car selection
 int life=3;  //provides 3 chances to players.
-int D==55;  //delay
+int D=55;  //delay
 int score[N];
 int count=0;  
 
