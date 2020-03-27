@@ -73,7 +73,7 @@ void play()
 		rectangle(r,k,r+50,50+k);
 		rectangle(s,l,s+50,50+l);
 
-			if(i+58>=r&&i<=(r+50)&&k>=270&&k<=420)
+			if(i+30>=r&&i<=(r+30)&&k>=325&&k<=445)
 			{
 				cleardevice();
 				outtextxy(getmaxx()/2,getmaxy()/2,"GAME OVER");
@@ -88,7 +88,7 @@ void play()
 				  }
 				menu();
 			}
-			if(i+58>=s&&i<=(s+50)&&l>=270&&l<=420)
+			if(i+30>=s&&i<=(s+30)&&l>=325&&l<=445)
 			{
 				cleardevice();
 				outtextxy(getmaxx()/2,getmaxy()/2,"GAME OVER");
@@ -303,23 +303,23 @@ void car1()
 void mycar1(int i)
 {
 	setcolor(RED);
-	rectangle(20+i,250,40+i,280); //roof
-	rectangle(15+i,280,45+i,285);
+	rectangle(20+i,350,40+i,380); //roof
+	rectangle(15+i,380,45+i,385);
 	setcolor(GREEN);
-	rectangle(10+i,240,50+i,295);      //main outline of car
-	arc(30+i,255,10,170,24);     //side mirror's
-	arc(30+i,220,10,170,10);     //front light
+	rectangle(10+i,340,50+i,395);      //main outline of car
+	arc(30+i,355,10,170,24);     //side mirror's
+	arc(30+i,320,10,170,10);     //front light
 
-	line(50+i,240,40+i,250); //top_right_corner
-	line(10+i,240,20+i,250); //top_left_corner
-	line(15+i,285,10+i,295); //bottom_left_corner
-	line(45+i,285,50+i,295); //bottom_right_corner
+	line(50+i,340,40+i,350); //top_right_corner
+	line(10+i,340,20+i,350); //top_left_corner
+	line(15+i,385,10+i,395); //bottom_left_corner
+	line(45+i,385,50+i,395); //bottom_right_corner
 
 	//design on bonet
 
 	setcolor(GREEN);
-	ellipse(30+i,295,180,360,20,10);//trunk lid
-	ellipse(30+i,240,0,180,20,30);//bonet
+	ellipse(30+i,395,180,360,20,10);//trunk lid
+	ellipse(30+i,340,0,180,20,30);//bonet
 	delay(D);
 	cleardevice();
 }
@@ -342,7 +342,7 @@ void car2()
 
 	//design on bonet
 	setcolor(BLUE);
-	ellipse(265+i,215,10,170,20,20);
+	ellipse(265+i,315,10,170,20,20);
 
 	setcolor(YELLOW);
 	ellipse(265+i,320,180,360,30,20);//trunk lid
@@ -352,25 +352,25 @@ void car2()
 void mycar2(int i)
 {
 	setcolor(BLUE);
-	rectangle(20+i,250,40+i,280); //roof
-	rectangle(15+i,280,45+i,285);
+	rectangle(20+i,350,40+i,380); //roof
+	rectangle(15+i,380,45+i,385);
 	setcolor(YELLOW);
-	rectangle(10+i,240,50+i,295);      //main outline of car
-	arc(30+i,255,10,170,24);     //side mirror's
-	arc(30+i,220,10,170,10);     //front light
+	rectangle(10+i,340,50+i,395);      //main outline of car
+	arc(30+i,355,10,170,24);     //side mirror's
+	arc(30+i,320,10,170,10);     //front light
 
-	line(50+i,240,40+i,250); //top_right_corner
-	line(10+i,240,20+i,250); //top_left_corner
-	line(15+i,285,10+i,295); //bottom_left_corner
-	line(45+i,285,50+i,295); //bottom_right_corner
+	line(50+i,340,40+i,350); //top_right_corner
+	line(10+i,340,20+i,350); //top_left_corner
+	line(15+i,385,10+i,395); //bottom_left_corner
+	line(45+i,385,50+i,395); //bottom_right_corner
 
 	//design on bonet
 	setcolor(BLUE);
-	arc(30+i,230,10,170,10);
+	arc(30+i,330,10,170,10);
 
 	setcolor(YELLOW);
-	ellipse(30+i,295,180,360,20,10);//trunk lid
-	ellipse(30+i,240,0,180,20,30);//bonet
+	ellipse(30+i,395,180,360,20,10);//trunk lid
+	ellipse(30+i,340,0,180,20,30);//bonet
 	delay(D);
 	cleardevice();
 }
@@ -397,20 +397,20 @@ void car3()
 void mycar3(int i)
 {
 	setcolor(RED);
-	rectangle(20+i,250,40+i,280); //roof
+	rectangle(20+i,350,40+i,380); //roof
 	setcolor(RED);
-	rectangle(10+i,240,50+i,295);      //main outline of car
-	arc(30+i,255,10,170,24);     //side mirror's
-	arc(30+i,220,10,170,10);     //front light
+	rectangle(10+i,340,50+i,395);      //main outline of car
+	arc(30+i,355,10,170,24);     //side mirror's
+	arc(30+i,320,10,170,10);     //front light
 
-	line(50+i,240,40+i,250); //top_right_corner
-	line(10+i,240,20+i,250); //top_left_corner
-	line(20+i,280,10+i,295); //bottom_left_corner
-	line(40+i,280,50+i,295); //bottom_right_corner
+	line(50+i,340,40+i,350); //top_right_corner
+	line(10+i,340,20+i,350); //top_left_corner
+	line(20+i,380,10+i,395); //bottom_left_corner
+	line(40+i,380,50+i,395); //bottom_right_corner
 
 	setcolor(RED);
-	ellipse(30+i,295,180,360,20,10);//trunk lid
-	ellipse(30+i,240,0,180,20,30);//bonnet
+	ellipse(30+i,395,180,360,20,10);//trunk lid
+	ellipse(30+i,340,0,180,20,30);//bonnet
 	delay(D);
 	cleardevice();
 }
@@ -438,21 +438,21 @@ void car4()
 void mycar4(int i)
 {
 	setcolor(GREEN);
-	rectangle(20+i,250,40+i,280); //roof
-	rectangle(15+i,280,45+i,285);
+	rectangle(20+i,350,40+i,380); //roof
+	rectangle(15+i,380,45+i,385);
 	setcolor(WHITE);
-	rectangle(10+i,240,50+i,295);      //main outline of car
-	arc(30+i,255,10,170,24);     //side mirror's
-	arc(30+i,220,10,170,10);     //front light
+	rectangle(10+i,340,50+i,395);      //main outline of car
+	arc(30+i,355,10,170,24);     //side mirror's
+	arc(30+i,320,10,170,10);     //front light
 
-	line(50+i,240,40+i,250); //top_right_corner
-	line(10+i,240,20+i,250); //top_left_corner
-	line(15+i,285,10+i,295); //bottom_left_corner
-	line(45+i,285,50+i,295); //bottom_right_corner
+	line(50+i,340,40+i,350); //top_right_corner
+	line(10+i,340,20+i,350); //top_left_corner
+	line(15+i,385,10+i,395); //bottom_left_corner
+	line(45+i,385,50+i,395); //bottom_right_corner
 
 	setcolor(WHITE);
-	ellipse(30+i,295,180,360,20,10);//trunk lid
-	ellipse(30+i,240,0,180,20,30);//bonnet
+	ellipse(30+i,395,180,360,20,10);//trunk lid
+	ellipse(30+i,340,0,180,20,30);//bonnet
 	delay(D);
 	cleardevice();
 }
