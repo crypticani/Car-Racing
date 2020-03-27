@@ -52,7 +52,7 @@ void play()
 	{
 	for(l=-200;l<433;l+=5)
 	{
-		for(i=220;i<345;i++)
+		for(i=205;i<345;i++)
 		{
 		for(j=0;j<500;j++)
 		{
@@ -136,20 +136,20 @@ void play()
 						getch();
 					}
 				}
-				if(ch==75&&i>220)  //move left
+				if(ch==75&&i>204)  //move left
 				{
-					if(i==220)
+					if(i==205||210)
 					{
-						i=225;
+						i=215;
 					}
 					i-=10;
 				}
 
-				if(ch==77&&i<337) //move right
+				if(ch==77&&i<346) //move right
 				{
-					if(i==345) //max value of x coordinate of car
+					if(i==345||340) //max value of x coordinate of car
 					{
-						i=345; // to remain on the track
+						i=335; // to remain on the track
 					}
 					i+=10;
 				}
