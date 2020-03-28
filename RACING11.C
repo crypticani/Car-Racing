@@ -107,7 +107,7 @@ void play()
 			{
 				outtextxy(500,120,"Speed : 150 mph");
 			}
-			else if(D=20)
+			else if(D==20)
 			{
 				outtextxy(500,120,"Speed : 160 mph");
 			}
