@@ -642,7 +642,6 @@ void mycar4(int i)
 
 void track()
 {
-		int z;
 		setcolor(WHITE);
 		bar3d(120,0,125,478,5,3);//left boundary
 		bar3d(480,0,485,478,5,3);//right boundary
