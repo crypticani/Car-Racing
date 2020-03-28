@@ -31,6 +31,9 @@ void track();
 void play();
 void menu();
 void high_score();
+void heart1();
+void heart2();
+void heart3();
 void h1();
 void h2();
 void select_car();
@@ -110,6 +113,16 @@ void play()
 			else if(D==20)
 			{
 				outtextxy(500,120,"Speed : 160 mph");
+			}
+			outtextxy(500,30,"Remaining Life:");
+			switch(life)   //to show the hearts corressponding to remaining life.
+			{
+				case 1: heart1();
+				break;
+				case 2: heart2();
+				break;
+				case 3: heart3();
+				break;
 			}
 			switch(cars)
 			{
@@ -781,6 +794,34 @@ void high_score()
 	}
 	cleardevice();
 	menu();
+}
+
+void heart1()
+{
+	int h1[]={517,75,506,60,510,50,515,51,517,60,520,51,525,50,529,60,517,75};
+	setcolor(RED);
+	setfillstyle(SOLID_FILL,RED);  
+	fillpoly(9,h1);
+}
+void heart2()
+{
+	int h1[]={517,75,506,60,510,50,515,51,517,60,520,51,525,50,529,60,517,75};
+	int h2[]={557,75,546,60,550,50,555,51,557,60,560,51,565,50,569,60,557,75};
+	setcolor(RED);
+	setfillstyle(SOLID_FILL,RED);  
+	fillpoly(9,h1);
+	fillpoly(9,h2);
+}
+void heart3()
+{
+	int h1[]={517,75,506,60,510,50,515,51,517,60,520,51,525,50,529,60,517,75};
+	int h2[]={557,75,546,60,550,50,555,51,557,60,560,51,565,50,569,60,557,75};
+	int h3[]={597,75,586,60,590,50,595,51,597,60,600,51,605,50,609,60,597,75};
+	setcolor(RED);
+	setfillstyle(SOLID_FILL,RED);  
+	fillpoly(9,h1);
+	fillpoly(9,h2);
+	fillpoly(9,h3);
 }
 
 void h1() //prints the "MENU"
