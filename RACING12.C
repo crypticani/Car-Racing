@@ -640,7 +640,7 @@ void mycar4(int i)
 	cleardevice();
 }
 
-void track()
+void track(int k)
 {
 		setcolor(WHITE);
 		bar3d(120,0,125,478,5,3);//left boundary
