@@ -4,6 +4,7 @@
 	2. All time High Score option added.
 	3. Bugs at the select car screen fixed.
 	4. Default Delay set to 50.
+	5. Heart is displayed corressponding to remaining life(s);
 */
 
 #include<graphics.h>
