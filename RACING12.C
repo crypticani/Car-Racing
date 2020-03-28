@@ -1,6 +1,7 @@
 /*
 	Racing 12 Changelog :
 	1. Track has been modified for further updates.
+	2. Moving track, so that car appears to be moving.
 	
 	more to be added :
 	1. Instruction Section
@@ -28,7 +29,7 @@ int myscore;
 
 void loading();
 void car(int);
-void track();
+void track(int);
 void play();
 void menu();
 void high_score();
@@ -73,8 +74,8 @@ void play()
 		{
 		for(j=0;j<500;j++)
 		{
-			track();
-			bar3d(10,0,630,0,5,2);
+			track(k);
+			bar3d(10,0,630,0,5,2);  // boundaries of the playing screen
 			bar3d(10,0,10,475,5,2);
 			bar3d(10,475,630,475,5,2);
 			bar3d(630,0,630,475,5,2);
@@ -647,13 +648,38 @@ void track()
 		bar3d(480,0,485,478,5,3);//right boundary
 		line(280,0,280,getmaxy());  //lanes
 		line(340,0,340,getmaxy());
-
-		for(z=0;z<480;z+=70)  //inner left and right boundaries
-		{
-			bar3d(200,0+z,205,50+z,5,3);
-			bar3d(405,0+z,410,50+z,5,3);
-		}
-
+		
+		// for moving tracks 
+			bar3d(200,-420+k,205,-380+k,5,3);
+			bar3d(405,-420+k,410,-380+k,5,3);
+			bar3d(200,-360+k,205,-320+k,5,3);
+			bar3d(405,-360+k,410,-320+k,5,3);
+			bar3d(200,-300+k,205,-260+k,5,3);
+			bar3d(405,-300+k,410,-260+k,5,3);
+			bar3d(200,-240+k,205,-200+k,5,3);
+			bar3d(405,-240+k,410,-200+k,5,3);
+			bar3d(200,-180+k,205,-140+k,5,3);
+			bar3d(405,-180+k,410,-140+k,5,3);
+			bar3d(200,-120+k,205,-80+k,5,3);
+			bar3d(405,-120+k,410,-80+k,5,3);
+			bar3d(200,-60+k,205,-20+k,5,3);
+			bar3d(405,-60+k,410,-20+k,5,3);
+			bar3d(200,0+k,205,40+k,5,3);
+			bar3d(405,0+k,410,40+k,5,3);
+			bar3d(200,60+k,205,100+k,5,3);
+			bar3d(405,60+k,410,100+k,5,3);
+			bar3d(200,120+k,205,160+k,5,3);
+			bar3d(405,120+k,410,160+k,5,3);
+			bar3d(200,180+k,205,220+k,5,3);
+			bar3d(405,180+k,410,220+k,5,3);
+			bar3d(200,240+k,205,280+k,5,3);
+			bar3d(405,240+k,410,280+k,5,3);
+			bar3d(200,300+k,205,340+k,5,3);
+			bar3d(405,300+k,410,340+k,5,3);
+			bar3d(200,360+k,205,400+k,5,3);
+			bar3d(405,360+k,410,400+k,5,3);
+			bar3d(200,420+k,205,460+k,5,3);
+			bar3d(405,420+k,410,460+k,5,3);
 }
 
 void loading() //loading screen
