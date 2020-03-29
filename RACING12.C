@@ -1,13 +1,3 @@
-/*
-	Racing 12 Changelog :
-	1. Track has been modified for further updates.
-	2. Moving track, so that car appears to be moving.
-	
-	more to be added :
-	1. Instruction Section
-	2. About Section
-*/
-
 #include<graphics.h>
 #include<stdio.h>
 #include<conio.h>
@@ -23,9 +13,9 @@ int cars=0;  // for car selection
 int life=3;  //provides 3 chances to players.
 int D=50;  //delay
 int score[N];
-int count=0; 
+int count=0;
 FILE *fp;   // file pointer
-int myscore; 
+int myscore;
 
 void loading();
 void car(int);
@@ -48,11 +38,13 @@ void mycar1(int);
 void mycar2(int);
 void mycar3(int);
 void mycar4(int);
+void instructions();
+void about();
 
 int main()
 {
 	int gd=DETECT,gm;
-	initgraph(&gd,&gm,"c:\\turboc3\\bgi");
+	initgraph(&gd,&gm,"c:\\tc\\bgi");
 	loading();  //loading screen
 	menu();
 	return 0;
@@ -647,8 +639,8 @@ void track(int k)
 		bar3d(480,0,485,478,5,3);//right boundary
 		line(280,0,280,getmaxy());  //lanes
 		line(340,0,340,getmaxy());
-		
-		// for moving tracks 
+
+		// for moving tracks
 			bar3d(200,-420+k,205,-380+k,5,3);
 			bar3d(405,-420+k,410,-380+k,5,3);
 			bar3d(200,-360+k,205,-320+k,5,3);
@@ -684,9 +676,9 @@ void track(int k)
 void loading() //loading screen
 {
 	int i;
-	settextstyle(8,0,7);
-	outtextxy(130,100,"Car Racing");
-	settextstyle(6,0,2);
+	settextstyle(4,0,7);
+	outtextxy(160,130,"Car Racing");
+	settextstyle(1,0,2);
 	outtextxy((getmaxx()/2)-30,getmaxy()-130,"LOADING");
 	for(i=0;i<400;i+=2) //loading animation
 	{
@@ -761,11 +753,13 @@ void menu()
 			}
 			else if(y1==280)
 			{
-				menu(); //Instructions
+				cleardevice();
+				instructions(); //Instructions
 			}
 			else if(y1==320)
 			{
-				menu(); //About
+				cleardevice();
+				about(); //About
 			}
 			else if(y1==360)
 			{
@@ -830,7 +824,7 @@ void heart1()
 {
 	int h1[]={517,75,506,60,510,50,515,51,517,60,520,51,525,50,529,60,517,75};
 	setcolor(RED);
-	setfillstyle(SOLID_FILL,RED);  
+	setfillstyle(SOLID_FILL,RED);
 	fillpoly(9,h1);
 }
 void heart2()
@@ -838,7 +832,7 @@ void heart2()
 	int h1[]={517,75,506,60,510,50,515,51,517,60,520,51,525,50,529,60,517,75};
 	int h2[]={557,75,546,60,550,50,555,51,557,60,560,51,565,50,569,60,557,75};
 	setcolor(RED);
-	setfillstyle(SOLID_FILL,RED);  
+	setfillstyle(SOLID_FILL,RED);
 	fillpoly(9,h1);
 	fillpoly(9,h2);
 }
@@ -848,7 +842,7 @@ void heart3()
 	int h2[]={557,75,546,60,550,50,555,51,557,60,560,51,565,50,569,60,557,75};
 	int h3[]={597,75,586,60,590,50,595,51,597,60,600,51,605,50,609,60,597,75};
 	setcolor(RED);
-	setfillstyle(SOLID_FILL,RED);  
+	setfillstyle(SOLID_FILL,RED);
 	fillpoly(9,h1);
 	fillpoly(9,h2);
 	fillpoly(9,h3);
@@ -872,3 +866,54 @@ void h2()  // prints options
 		outtextxy(220,320,"About");
 		outtextxy(220,360,"Exit");
 	}
+
+void instructions()
+{
+
+	settextstyle(4,0,7);
+	setcolor(GREEN);
+	outtextxy(150,50,"Instructions");
+
+	bar3d(50,150,550,150,3,1);
+	settextstyle(8,0,2);
+	outtextxy(60,170,"Press left arrow key to move left side");
+	outtextxy(60,200,"Press right arrow key to move right side");
+	outtextxy(60,230,"Press space bar to paused/play game");
+	outtextxy(60,260,"Press esc to quit the game & return to menu");
+
+	bar3d(50,300,550,300,3,1);
+	settextstyle(4,0,4);
+	setcolor(RED);
+	outtextxy(60,320,"press esc to return to the main menu");
+	kbhit();
+	while(getch()!=27)
+	{
+		getch();
+	}
+	cleardevice();
+	menu();
+}
+
+void about()
+{
+	settextstyle(4,0,7);
+	setcolor(GREEN);
+	outtextxy(150,50,"About");
+	bar3d(50,150,550,150,3,1);
+
+	settextstyle(8,0,2);
+	outtextxy(60,170,"we'll provide this information very soon!");
+	bar3d(50,280,550,280,3,1);
+
+	settextstyle(4,0,4);
+	setcolor(RED);
+	outtextxy(60,380,"press esc to return to the main menu");
+
+	kbhit();
+	while(getch()!=27)
+	{
+		getch();
+	}
+	cleardevice();
+	menu();
+}
