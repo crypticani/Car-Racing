@@ -1,13 +1,3 @@
-/*
-	Racing 13 Changelog :
-	1. Playing Screen got instructions
-	2. Instruction Section updated
-	3. About Section updated
-	4. Background colour added
-	5. some minor bug fixes
-	6. Release of first version v1.13
-*/
-
 #include<graphics.h>
 #include<stdio.h>
 #include<conio.h>
